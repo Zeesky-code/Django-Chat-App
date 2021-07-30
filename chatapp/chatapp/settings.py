@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chat',
+    'corsheaders',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+STREAM_API_KEY = 'k54qzxhxfd49'
+STREAM_API_SECRET = 'eaefdu6n8uvu7pzwnkz3utw6pc35jur82bhey4ppbf2bqxesk8g2928gbarp33jq'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
