@@ -14,12 +14,14 @@ import { JoinComponent } from './join/join.component';
     JoinComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '/join', component: JoinComponent },
-    ]),
+    { path: 'join', component: JoinComponent },
+], {
+    initialNavigation: 'enabled'
+}),
   ],
   providers: [],
   bootstrap: [AppComponent],
