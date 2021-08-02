@@ -18,7 +18,7 @@ import { JoinComponent } from './join/join.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'join', component: JoinComponent },
+      { path: '/join', component: JoinComponent },
     ]),
   ],
   providers: [],

@@ -13,13 +13,11 @@ export declare interface User {
 export class StateService {
   constructor() {}
 
-  private _user: User;
-
-  get user(): User {
+  private _user?: User;
+  get user(): User|undefined {
     return this._user;
-  }
-
-  set user(user: User) {
+  } 
+  set user(user: User|undefined) {
     this._user = user;
   }
 }
