@@ -12,21 +12,17 @@ declare interface UserInfo {
 })
 
 export class StreamService {
-
-  constructor() {}
-  streamClient!: StreamChat;
-  currentUser!: ConnectAPIResponse;
-  
+  currentUser: any;
+  constructor(private streamClient: StreamChat) {}
 
   public async initClient(user: UserInfo): Promise<Channel> {
     this.streamClient = new StreamChat(user.apiKey);
-    this.currentUser = await this.streamClient.setUser(
-      {
-        id: user.username,
-        name: user.username,
-      },
-      user.token
-    );
+  this.currentUser = await this.streamClient.connectUser(      {
+      id: user.username,
+      name: user.username,
+    },
+    user.token)
+  
     return this.streamClient.channel('messaging', 'General');
   }
 }

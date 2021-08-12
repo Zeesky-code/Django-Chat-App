@@ -8,8 +8,8 @@
         <div
           class="message"
           *ngFor="let message of messages"
-          [ngClass]="getClasses(message.user.id)"
-        >
+          >
+          <!-- [ngClass]="getClasses(message.user.id)" -->
           <p>{{ message.text }}</p>
         </div>
       </div>

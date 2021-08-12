@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit {
 
   messages: MessageResponse[] = [];
   message = '';
-  channel: Channel;
+  channel!: Channel;
 
   async sendMessage() {
     if (this.message) {
@@ -54,7 +54,8 @@ export class ChatComponent implements OnInit {
       await this.channel.watch();
       this.messages = this.channel.state.messages as any;
       this.channel.on('message.new', (event) => {
-        this.messages = this.messages.concat(event.message);
+        // this.messages = this.messages.concat([event.message]);
+        console.log(event)
       });
     } 
     else {

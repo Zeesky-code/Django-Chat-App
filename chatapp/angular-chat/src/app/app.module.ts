@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'; // for routing
 import { HttpClientModule } from '@angular/common/http'; // for the http client
 import { FormsModule } from '@angular/forms'; // to handle forms
+import { StreamChat  } from 'stream-chat';
 
 import { AppComponent } from './app.component';
 import { JoinComponent } from './join/join.component';
@@ -25,6 +26,7 @@ import { ChatComponent } from './chat/chat.component';
 ], {
     initialNavigation: 'enabled'
 }),
+  StreamChat
   ],
   providers: [],
   bootstrap: [AppComponent],
